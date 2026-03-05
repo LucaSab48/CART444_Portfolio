@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luca Sabelli | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="site-body">
+  <main class="window-page">
+    <section class="window-shell">
+      <header class="window-topbar">
+        <div class="initials">LS</div>
+        <nav class="top-nav">
+          <a class="pill-link active" href="index.html">Home</a>
+          <a class="pill-link" href="work.html">Work</a>
+          <a class="pill-link" href="about.html">About</a>
+        </nav>
+      </header>
+
+      <section class="intro-row">
+        <div class="title-block">
+          <h1>Hi, I&apos;m Luca Sabelli.</h1>
+        </div>
+        <p class="intro-copy">
+          A computational art student focused on film editing, game development,
+          and visual experimentation.
+        </p>
+      </section>
+
+      <section class="hero-slider" aria-label="Featured projects slideshow">
+        <article class="slide active">
+          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=80" alt="Film project still with cinematic lighting">
+        </article>
+        <article class="slide">
+          <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1400&q=80" alt="Computer setup for game development">
+        </article>
+        <article class="slide">
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1400&q=80" alt="Interactive digital art projection">
+        </article>
+      </section>
+
+      <div class="progress-wrap">
+        <label for="slider-progress" class="sr-only">Project progress</label>
+        <input id="slider-progress" type="range" min="0" max="2" value="0" step="1">
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

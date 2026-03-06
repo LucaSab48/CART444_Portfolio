@@ -1,12 +1,13 @@
 :root {
-  --bg-top: #f7f2eb;
-  --bg-bottom: #e8edf8;
-  --ink: #1a1f2b;
-  --muted: #50596d;
-  --line: #d5dced;
-  --line-strong: #9aa5c3;
-  --accent: #3669f2;
-  --max-content: 1120px;
+  --bg-top: #efeaf8;
+  --bg-bottom: #dceee8;
+  --ink: #112323;
+  --muted: #345052;
+  --line: #b9c9c8;
+  --line-strong: #4f666d;
+  --accent: #774ee8;
+  --accent-2: #1f5f4f;
+  --max-content: 1240px;
   --radius-lg: 26px;
   --radius-md: 18px;
 }
@@ -18,10 +19,11 @@
 body {
   margin: 0;
   color: var(--ink);
-  font-family: "Manrope", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   background:
-    radial-gradient(circle at 8% 6%, rgba(255, 255, 255, 0.9) 0, transparent 33%),
-    radial-gradient(circle at 92% 16%, rgba(255, 143, 61, 0.16) 0, transparent 25%),
+    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.82) 0, transparent 36%),
+    radial-gradient(circle at 88% 12%, rgba(119, 78, 232, 0.16) 0, transparent 30%),
+    radial-gradient(circle at 72% 72%, rgba(31, 95, 79, 0.14) 0, transparent 35%),
     linear-gradient(165deg, var(--bg-top), var(--bg-bottom));
 }
 
@@ -46,22 +48,23 @@ img {
   color: var(--ink);
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  padding: 0.34rem 0.82rem;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.81rem;
+  padding: 0.55rem 1.12rem;
+  font-family: "Sora", sans-serif;
+  font-size: 0.95rem;
   letter-spacing: 0.02em;
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.72);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
-  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 }
 
 .pill-link:hover,
 .pill-link.active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #f8fbff;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #f7f3ff;
   transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(95, 64, 177, 0.28);
 }
 
 .window-page {
@@ -71,8 +74,7 @@ img {
 }
 
 .window-shell {
-  width: min(var(--max-content), 100%);
-  margin: 0 auto;
+  width: 100%;
   padding: 0;
 }
 
@@ -85,18 +87,22 @@ img {
 }
 
 .initials {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.01em;
+  font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: 0.03em;
 }
 
 .intro-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.4rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   align-items: start;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
+  max-width: min(980px, 100%);
+  margin-inline: auto;
+  text-align: center;
 }
 
 .title-block {
@@ -105,26 +111,29 @@ img {
 
 .title-block h1 {
   margin: 0;
-  font-size: clamp(2.35rem, 6vw, 5.2rem);
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
   line-height: 0.9;
   letter-spacing: -0.03em;
 }
 
 .intro-copy {
   margin: 0;
-  max-width: 38ch;
-  justify-self: end;
-  padding-top: 0.6rem;
-  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  max-width: 50ch;
+  justify-self: center;
+  padding-top: 0;
+  font-size: clamp(1.08rem, 1.35vw, 1.25rem);
   line-height: 1.5;
   color: var(--muted);
 }
 
 .hero-slider {
   position: relative;
+  max-width: min(var(--max-content), 100%);
+  margin-inline: auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 16 / 8;
+  height: clamp(360px, 62vh, 720px);
   background: #d8dce7;
   box-shadow: 0 20px 40px rgba(25, 36, 67, 0.18);
 }
@@ -158,12 +167,52 @@ img {
 .progress-wrap {
   margin-top: 1rem;
   padding: 0;
+  max-width: min(var(--max-content), 100%);
+  margin-inline: auto;
 }
 
 #slider-progress {
+  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(48, 67, 72, 0.35);
+  background: linear-gradient(90deg, rgba(119, 78, 232, 0.5), rgba(31, 95, 79, 0.46));
   cursor: pointer;
-  accent-color: var(--accent);
+}
+
+#slider-progress::-webkit-slider-runnable-track {
+  height: 12px;
+  border-radius: 999px;
+}
+
+#slider-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -8px;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #f2efff;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d8c7ff, #5e39c6 72%);
+  box-shadow: 0 8px 20px rgba(62, 39, 125, 0.45);
+}
+
+#slider-progress::-moz-range-track {
+  height: 12px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(119, 78, 232, 0.5), rgba(31, 95, 79, 0.46));
+}
+
+#slider-progress::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #f2efff;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d8c7ff, #5e39c6 72%);
+  box-shadow: 0 8px 20px rgba(62, 39, 125, 0.45);
 }
 
 .sr-only {
@@ -199,6 +248,7 @@ img {
 
 .list-header h1 {
   margin: 0;
+  font-family: "Sora", sans-serif;
   line-height: 0.94;
   letter-spacing: -0.03em;
   font-size: clamp(2.3rem, 5.4vw, 4.5rem);
@@ -215,7 +265,8 @@ img {
 
 .top-nav-inline {
   justify-self: center;
-  margin-top: 0.2rem;
+  justify-self: end;
+  margin-top: 0.4rem;
 }
 
 .project-list {
@@ -233,16 +284,36 @@ img {
   padding: 0;
   align-items: center;
   background: transparent;
-  transition: transform 0.25s ease;
+  transition: transform 0.35s ease;
+  transform-origin: center;
+  position: relative;
+  isolation: isolate;
+}
+
+.project-item::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem -0.7rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(120deg, rgba(119, 78, 232, 0.14), rgba(31, 95, 79, 0.18));
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.32s ease, transform 0.32s ease;
 }
 
 .project-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-7px);
+}
+
+.project-item:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .project-num {
   margin: 0 0 0.9rem;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 700;
   letter-spacing: 0.03em;
   color: #253353;
@@ -259,12 +330,12 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.46rem 0.82rem;
+  padding: 0.58rem 1.02rem;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   color: #1d2d4f;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.78rem;
+  font-family: "Sora", sans-serif;
+  font-size: 0.92rem;
   letter-spacing: 0.02em;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.75);
@@ -276,9 +347,9 @@ img {
 }
 
 .project-link:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   border-color: var(--accent);
-  background: rgba(243, 247, 255, 0.94);
+  background: rgba(245, 239, 255, 0.95);
 }
 
 .project-item img {
@@ -287,6 +358,13 @@ img {
   border-radius: var(--radius-md);
   object-fit: cover;
   box-shadow: 0 16px 34px rgba(32, 43, 78, 0.16);
+  transition: transform 0.45s ease, box-shadow 0.45s ease, filter 0.45s ease;
+}
+
+.project-item:hover img {
+  transform: scale(1.04) rotate(-0.4deg);
+  filter: saturate(1.08) contrast(1.03);
+  box-shadow: 0 22px 38px rgba(34, 47, 91, 0.22);
 }
 
 .about-page {
@@ -294,7 +372,7 @@ img {
 }
 
 .about-nav {
-  justify-content: center;
+  justify-content: flex-end;
   margin-bottom: 2.6rem;
 }
 
@@ -308,6 +386,7 @@ img {
 
 .about-copy h1 {
   margin: 0 0 1rem;
+  font-family: "Sora", sans-serif;
   font-size: clamp(2.4rem, 5.4vw, 4.8rem);
   line-height: 0.94;
   letter-spacing: -0.03em;
@@ -353,7 +432,7 @@ img {
 
 .detail-label {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Sora", sans-serif;
   color: #24344f;
 }
 
@@ -391,13 +470,13 @@ img {
   }
 
   .intro-copy {
-    justify-self: start;
+    justify-self: center;
     max-width: 42ch;
     padding-top: 0;
   }
 
   .top-nav-inline {
-    justify-self: center;
+    justify-self: end;
   }
 
   .project-item img {
@@ -405,6 +484,6 @@ img {
   }
 
   .about-nav {
-    justify-content: center;
+    justify-content: flex-end;
   }
 }

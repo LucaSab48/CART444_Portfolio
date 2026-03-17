@@ -4,63 +4,224 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luca Sabelli | Work</title>
+  <meta
+    name="description"
+    content="Selected films, games, generative studies, and interactive work by Luca Sabelli."
+  >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="site-body">
-  <main class="work-page">
-    <header class="list-header">
-      <h1>Hello, I&apos;m Luca Sabelli.</h1>
-      <p>
-        A graduating computational art student focused on editing, interactive
-        media, and game development.
-      </p>
-      <nav class="top-nav top-nav-inline">
-        <a class="pill-link" href="index.html">Home</a>
-        <a class="pill-link active" href="work.html">Work</a>
-        <a class="pill-link" href="about.html">About</a>
-      </nav>
+<body>
+  <div class="site-frame">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="Luca Sabelli home">
+          <span class="brand__mark">LS</span>
+          <span class="brand__text">Luca Sabelli</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a class="site-nav__link" href="index.html">Home</a>
+          <a class="site-nav__link site-nav__link--active" href="work.html">Work</a>
+          <a class="site-nav__link" href="contact.html">Contact</a>
+        </nav>
+      </div>
     </header>
 
-    <section class="project-list">
-      <article class="project-item">
-        <div class="project-meta">
-          <p class="project-num">01 / BOGEY</p>
-          <p class="project-desc">
-            A short film about a man&apos;s inward journey. Built around camera
-            experimentation and rhythmic editing choices.
-          </p>
-          <a href="#" class="project-link">More shots from this project</a>
+    <main>
+      <section class="section">
+        <div class="container archive-hero">
+          <div class="archive-hero__intro">
+            <p class="eyebrow">Work Archive</p>
+            <h1>A modular archive for films, games, interfaces, and visual experiments.</h1>
+          </div>
+          <div class="archive-hero__copy">
+            <p>This page is structured to grow with new releases, process studies, and future detail pages. Featured works sit beside a lighter archive rhythm so the page feels curated rather than uniform.</p>
+            <ul class="tag-row" aria-label="Project categories">
+              <li>Film</li>
+              <li>Games</li>
+              <li>Generative Art</li>
+              <li>Interactive</li>
+              <li>Design</li>
+              <li>Photography / Visual Experiments</li>
+            </ul>
+          </div>
         </div>
-        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80" alt="Still frame for BOGEY short film">
-      </article>
+      </section>
 
-      <article class="project-item">
-        <div class="project-meta">
-          <p class="project-num">02 / Lynch&apos;s Dream Machine</p>
-          <p class="project-desc">
-            Experimental website generating dream-like imagery and copy inspired
-            by surreal cinema motifs.
-          </p>
-          <a href="#" class="project-link">See more on this project</a>
-        </div>
-        <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1200&q=80" alt="Dark cinematic website interface">
-      </article>
+      <section class="section section--bordered">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Featured Projects</p>
+            <h2>Lead projects with more visual weight and room for context.</h2>
+          </div>
+          <div class="archive-featured">
+            <!-- Add or duplicate featured work items here -->
+            <article class="archive-feature" id="bogey">
+              <a class="archive-feature__media" href="project-template.html">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1500&q=80" alt="Moody film still with strong contrast lighting">
+              </a>
+              <div class="archive-feature__body">
+                <p class="archive-feature__meta">2025 / Film</p>
+                <h2><a href="project-template.html">Bogey</a></h2>
+                <p>A short film centered on pacing, tension, and subtle psychological drift. The project foregrounds editing rhythm, low-light framing, and a restrained visual arc.</p>
+                <ul class="tag-row">
+                  <li>Editing</li>
+                  <li>Cinematography</li>
+                  <li>Narrative</li>
+                </ul>
+                <a class="button-link button-link--ghost" href="project-template.html">Project page placeholder</a>
+              </div>
+            </article>
 
-      <article class="project-item">
-        <div class="project-meta">
-          <p class="project-num">03 / THE CAVE</p>
-          <p class="project-desc">
-            Installation piece blending AI image generation with perceptual
-            sensor input to create a reactive visual space.
-          </p>
-          <a href="#" class="project-link">Read process notes</a>
+            <article class="archive-feature" id="signal-bloom">
+              <a class="archive-feature__media" href="project-template.html">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1500&q=80" alt="Dark game scene lit by a glowing screen">
+              </a>
+              <div class="archive-feature__body">
+                <p class="archive-feature__meta">2026 / Games / Interactive</p>
+                <h2><a href="project-template.html">Signal Bloom</a></h2>
+                <p>An experimental game prototype where fragmented environments, audio cues, and navigation systems become a way of mapping memory.</p>
+                <ul class="tag-row">
+                  <li>Unity</li>
+                  <li>Level Mood</li>
+                  <li>Sound</li>
+                </ul>
+                <a class="button-link button-link--ghost" href="project-template.html">Project page placeholder</a>
+              </div>
+            </article>
+          </div>
         </div>
-        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80" alt="Immersive installation environment">
-      </article>
-    </section>
-  </main>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Archive List</p>
+            <h2>A flexible list for adding new entries without rebuilding the page.</h2>
+          </div>
+          <div class="archive-list">
+            <!-- Add new work items here by duplicating one archive-entry block -->
+            <article class="archive-entry" id="design-system">
+              <div class="archive-entry__meta">
+                <p class="archive-entry__index">01</p>
+                <div>
+                  <p class="archive-entry__year">2026</p>
+                  <h3><a href="https://lucasab48.github.io/CART444_DesignSystem/">CART444 Design System</a></h3>
+                </div>
+              </div>
+              <div class="archive-entry__summary">
+                <p>A design system defining the grid, spacing, typography, color, and component logic that supports this portfolio and future documentation work.</p>
+                <ul class="tag-row">
+                  <li>Design</li>
+                  <li>Systems</li>
+                  <li>Documentation</li>
+                </ul>
+              </div>
+              <a class="archive-entry__thumb" href="https://lucasab48.github.io/CART444_DesignSystem/">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80" alt="Design workspace with code and interface mockups">
+              </a>
+            </article>
+
+            <article class="archive-entry" id="cave">
+              <div class="archive-entry__meta">
+                <p class="archive-entry__index">02</p>
+                <div>
+                  <p class="archive-entry__year">2025</p>
+                  <h3><a href="project-template.html">The Cave</a></h3>
+                </div>
+              </div>
+              <div class="archive-entry__summary">
+                <p>A speculative installation concept using responsive projection, AI image processes, and sensor input to produce a shifting visual chamber.</p>
+                <ul class="tag-row">
+                  <li>Generative Art</li>
+                  <li>Installation</li>
+                  <li>Projection</li>
+                </ul>
+              </div>
+              <a class="archive-entry__thumb" href="project-template.html">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80" alt="Immersive installation with layered projected imagery">
+              </a>
+            </article>
+
+            <article class="archive-entry" id="memory-atlas">
+              <div class="archive-entry__meta">
+                <p class="archive-entry__index">03</p>
+                <div>
+                  <p class="archive-entry__year">2026</p>
+                  <h3><a href="project-template.html">Memory Atlas</a></h3>
+                </div>
+              </div>
+              <div class="archive-entry__summary">
+                <p>A generative image study translating collected stills into evolving compositions that treat an archive like a living visual dataset.</p>
+                <ul class="tag-row">
+                  <li>Generative Art</li>
+                  <li>Archive</li>
+                  <li>Image Systems</li>
+                </ul>
+              </div>
+              <a class="archive-entry__thumb" href="project-template.html">
+                <img src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?auto=format&fit=crop&w=1000&q=80" alt="Abstract generative image made of luminous points and layered textures">
+              </a>
+            </article>
+
+            <article class="archive-entry" id="echo-line">
+              <div class="archive-entry__meta">
+                <p class="archive-entry__index">04</p>
+                <div>
+                  <p class="archive-entry__year">2024</p>
+                  <h3><a href="project-template.html">Echo Line</a></h3>
+                </div>
+              </div>
+              <div class="archive-entry__summary">
+                <p>An interactive media piece where spoken fragments trigger composited visuals, layered typography, and temporal distortion.</p>
+                <ul class="tag-row">
+                  <li>Interactive</li>
+                  <li>Audio Reactive</li>
+                  <li>Installation</li>
+                </ul>
+              </div>
+              <a class="archive-entry__thumb" href="project-template.html">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80" alt="Large screen installation with textured monochrome image">
+              </a>
+            </article>
+
+            <article class="archive-entry" id="night-notes">
+              <div class="archive-entry__meta">
+                <p class="archive-entry__index">05</p>
+                <div>
+                  <p class="archive-entry__year">2025</p>
+                  <h3><a href="project-template.html">Night Notes</a></h3>
+                </div>
+              </div>
+              <div class="archive-entry__summary">
+                <p>A photography and visual experiments series focusing on urban glow, compressed time, and the atmosphere of off-hours spaces.</p>
+                <ul class="tag-row">
+                  <li>Photography</li>
+                  <li>Visual Experiments</li>
+                  <li>Series</li>
+                </ul>
+              </div>
+              <a class="archive-entry__thumb" href="project-template.html">
+                <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=80" alt="Night photography with reflective surfaces and moody light">
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>Luca Sabelli</p>
+        <div class="site-footer__links">
+          <a href="index.html">Home</a>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

@@ -1,25 +1,37 @@
-const slides = Array.from(document.querySelectorAll(".slide"));
-const progress = document.querySelector("#slider-progress");
+const slides = Array.from(document.querySelectorAll("[data-slide]"));
+const triggers = Array.from(document.querySelectorAll("[data-slide-trigger]"));
 
-if (slides.length && progress) {
-  let currentIndex = 0;
+if (slides.length && triggers.length && slides.length === triggers.length) {
+  let activeIndex = 0;
+  let intervalId;
 
-  const showSlide = (index) => {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
+  const showSlide = (nextIndex) => {
+    slides.forEach((slide, index) => {
+      slide.classList.toggle("is-active", index === nextIndex);
     });
-    currentIndex = index;
-    progress.value = String(index);
+
+    triggers.forEach((trigger, index) => {
+      trigger.classList.toggle("is-active", index === nextIndex);
+      trigger.setAttribute("aria-pressed", String(index === nextIndex));
+    });
+
+    activeIndex = nextIndex;
   };
 
-  progress.max = String(slides.length - 1);
+  const restartAutoPlay = () => {
+    window.clearInterval(intervalId);
+    intervalId = window.setInterval(() => {
+      showSlide((activeIndex + 1) % slides.length);
+    }, 5000);
+  };
 
-  progress.addEventListener("input", (event) => {
-    showSlide(Number(event.target.value));
+  triggers.forEach((trigger, index) => {
+    trigger.addEventListener("click", () => {
+      showSlide(index);
+      restartAutoPlay();
+    });
   });
 
-  setInterval(() => {
-    const nextIndex = (currentIndex + 1) % slides.length;
-    showSlide(nextIndex);
-  }, 3500);
+  showSlide(0);
+  restartAutoPlay();
 }

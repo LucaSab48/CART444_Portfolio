@@ -1402,6 +1402,15 @@ h3 {
     padding: var(--space-4);
   }
 
+  .archive-feature__media {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .archive-feature--lynch .archive-feature__media {
+    max-width: none;
+  }
+
   .hero-slide__caption {
     max-width: none;
     padding: var(--space-3);

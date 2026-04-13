@@ -314,11 +314,13 @@ h3 {
 .archive-hero__intro,
 .contact-hero__intro {
   grid-column: span 7;
+  min-width: 0;
 }
 
 .archive-hero__copy,
 .contact-hero__copy {
   grid-column: span 5;
+  min-width: 0;
 }
 
 .hero__content,
@@ -509,6 +511,10 @@ h3 {
 
 .media-crop--upper {
   object-position: center 22%;
+}
+
+.media-crop--partial-rotator {
+  object-position: center 100%;
 }
 
 .media-crop--partial-lower {
@@ -1056,23 +1062,30 @@ h3 {
 
 .archive-hero {
   align-items: start;
+  grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.85fr);
+  column-gap: var(--space-6);
+  row-gap: var(--space-4);
 }
 
 .archive-hero__intro {
-  grid-column: span 7;
+  grid-column: 1;
+  max-width: 760px;
 }
 
 .archive-hero__intro h1 {
-  max-width: 10ch;
-  font-size: clamp(2.9rem, 5vw, 4.7rem);
+  max-width: 11ch;
+  font-size: clamp(3.6rem, 5.4vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .archive-hero__copy {
-  grid-column: span 5;
-  grid-column-end: auto;
+  grid-column: 2;
+  max-width: 32rem;
   gap: var(--space-3);
-  padding-top: var(--space-3);
-  align-self: center;
+  padding-top: 0;
+  align-self: start;
 }
 
 .contact-hero {
@@ -1480,6 +1493,16 @@ h3 {
 
   .archive-feature {
     grid-template-columns: 1fr;
+  }
+
+  .archive-hero__intro,
+  .archive-hero__copy {
+    max-width: none;
+  }
+
+  .archive-hero__intro h1 {
+    max-width: none;
+    text-wrap: pretty;
   }
 
   .contact-panel__split {
